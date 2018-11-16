@@ -1,0 +1,90 @@
+<div class="loginMain">
+  <div class="loginBody">
+    <div class="login-form">
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <h2 class="text-center">Register</h2>   
+            <div class="form-group has-error">
+              <input type="text" class="form-control" formControlName="username" name="username" placeholder="Username" >
+                <!-- error Handling front -->
+                <div *ngIf="profileForm.controls.username.invalid && (profileForm.controls.username.dirty || profileForm.controls.username.touched)" class="custom-alert">
+                  <div *ngIf="profileForm.controls.username.errors.required">
+                    Name is required.
+                  </div>
+                  <div *ngIf="profileForm.controls.username.errors.minlength">
+                    Name must be at least 2 characters long.
+                  </div>
+                  <div *ngIf="profileForm.controls.username.errors.pattern">
+                    Name is incorrect.
+                  </div>                  
+                </div>
+                <!-- error Handling back -->
+                <span class="custom-alert" *ngIf="this.response !=undefined && this.response.error.username">
+                  {{this.response.error.username}}
+                </span>
+
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" formControlName="email" name="email" placeholder="Email" required="required">
+
+                <!-- error Handling front -->
+                <div *ngIf="profileForm.controls.email.invalid && (profileForm.controls.email.dirty || profileForm.controls.email.touched)" class="custom-alert">
+                  <div *ngIf="profileForm.controls.email.errors.required">
+                    Email is required.
+                  </div>
+                  <div *ngIf="profileForm.controls.email.errors.pattern">
+                      Email is incorrect.
+                  </div>              
+                </div>
+                <!-- error Handling back -->
+                <span class="custom-alert" *ngIf="this.response !=undefined && this.response.error.email">
+                  {{this.response.error.email}}
+                </span>
+
+            </div>        
+            <div class="form-group has-error">
+              <input type="password" class="form-control" formControlName="password" name="password" placeholder="Password" required="required">
+
+              <!-- error Handling frot-->
+              <div *ngIf="profileForm.controls.password.invalid && (profileForm.controls.password.dirty || profileForm.controls.password.touched)" class="custom-alert">
+                <div *ngIf="profileForm.controls.password.errors.required">
+                    Password is required.
+                </div>
+                <div *ngIf="profileForm.controls.password.errors.minlength">
+                    Password must be at least 5 characters long.
+                </div>
+                <div *ngIf="profileForm.controls.password.errors.pattern">
+                    Password must contain a charector, special charector and digit .
+                </div>
+              </div>
+              <!-- error Handling back -->
+              <span class="custom-alert" *ngIf="this.response !=undefined && this.response.error.password">
+                {{this.response.error.password}}
+              </span>
+
+            </div>
+            <div class="form-group">
+                <input type="password"  class="form-control" formControlName="confirmPassword" name="confirmPassword" placeholder="Confirm password" required="required">
+
+                <!-- error Handling -->
+              <div *ngIf="profileForm.controls.confirmPassword.invalid && (profileForm.controls.confirmPassword.dirty || profileForm.controls.confirmPassword.touched)" class="custom-alert">
+                  <div *ngIf="profileForm.controls.confirmPassword.errors.required">
+                      Confirm password is required.
+                  </div>
+                  <div *ngIf="profileForm.controls.confirmPassword.errors.MatchPassword">
+                      Confirm password and password should match .
+                  </div>  
+              </div>
+              <!-- error Handling back -->
+              <span class="custom-alert" *ngIf="this.response !=undefined && this.response.error.confirmPassword">
+                {{this.response.error.confirmPassword}}
+              </span>
+
+            </div>        
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!profileForm.valid" >Submit</button>
+            </div>
+        </form>
+        <p class="text-center small">Already have an account? <a routerLink="/" routerLinkActive="active" >Log in here!</a></p>
+    </div>
+  </div>
+</div>

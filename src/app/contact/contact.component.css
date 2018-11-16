@@ -1,0 +1,29 @@
+.contact-us{
+    text-align: center;
+}
+/* .cust-radio{
+    position: relative;
+    background-color: grey;
+    width:250px;
+    height: 60px;
+    margin:20px 0;    
+    border-radius: 50%;
+}
+.cust-radio .cust-radio-button{
+    position:absolute;
+    top:-20px;
+    background-color: whitesmoke;
+    width:100px;
+    height: 100px;
+    left:0px;
+    transition-property: background, left;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+    border-radius: 50%;
+}
+.cust-radio .active{
+    left:150px;
+    background-color: greenyellow;
+} */
+
+

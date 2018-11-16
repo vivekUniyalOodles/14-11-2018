@@ -1,0 +1,160 @@
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  /* flex-wrap: wrap; */
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background: #7386D5;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+#sidebar a,
+#sidebar a:hover,
+#sidebar a:focus {
+  color: inherit;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #6d7fcc;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+
+#sidebar ul li a:hover {
+  color: #7386D5;
+  background: #fff;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+  color: #fff;
+  background: #6d7fcc;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+a[aria-expanded="false"]::before,
+a[aria-expanded="true"]::before {
+  content: '\e259';
+  display: block;
+  position: absolute;
+  right: 20px;
+  font-family: 'Glyphicons Halflings';
+  font-size: 0.6em;
+}
+
+a[aria-expanded="true"]::before {
+  content: '\e260';
+}
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #6d7fcc;
+}
+
+a.download {
+  background: #fff;
+  color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+  background: #6d7fcc !important;
+  color: #fff !important;
+}
+
+
+.btn {
+  border: none;
+  border-radius: 0px;  
+  width: 100%;
+  text-align: left;
+  padding: 6px 10px;
+}
+
+.btn .caret{
+  position: absolute;
+  right: 20px;
+  top: 14px;
+}
+
+.btn-group {
+  width: 100%;
+}
+
+.dropdow-button{
+  position: relative;
+}
+
+.drop-down-menu{
+  background-color: #6d70cc;
+  max-height: 0;
+  transition: max-height 0.15s ease-out;
+  overflow: hidden;
+}
+
+.drop-menu-active{
+  /* visibility: hidden; */
+  max-height: 500px;
+  transition: max-height 0.25s ease-in;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -250px;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #sidebarCollapse span {
+    display: none;
+  }
+
+}
+@media (max-height: 648px) {
+  .right-panel{
+    min-height: 85.6vh;
+  }
+}
+@media (min-height: 649px) {
+  .right-panel{
+    min-height: 89.7vh;
+  }
+}
+

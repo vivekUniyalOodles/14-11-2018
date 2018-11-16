@@ -1,0 +1,25 @@
+.navbar {
+
+    margin-bottom: 0px;
+
+}
+
+.margin-left-10{
+    margin-left: 10px;
+}
+
+
+.profile-button{
+    margin-top: 8px;
+}
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .navbar-btn{
+        position: absolute;
+        right: 10%;
+    }    
+}
+

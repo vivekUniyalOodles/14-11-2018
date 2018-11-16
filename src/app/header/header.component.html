@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>       -->
+      <button type="button" id="sidebarCollapse" (click)="sideMenu()" class="btn btn-info navbar-btn">
+        <i class="glyphicon glyphicon-menu-hamburger"></i>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav margin-left-10">
+        <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <li><a >profile</a></li> -->
+        <div class="profile-button">
+          <div class="btn-group " dropdown>
+            <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                    aria-controls="dropdown-basic">
+                    {{userName|titlecase}}<span class="caret"></span>
+            </button>
+            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                role="menu" aria-labelledby="button-basic">
+              <li role="menuitem"><a class="dropdown-item" (click)="logout()">logout</a></li>
+              <!-- <li role="menuitem"><a class="dropdown-item" routerLink="/register">register</a></li> -->
+              <!-- </li> -->
+            </ul>
+          </div>
+        </div>
+        <!-- <li><a routerLink="/login" routerLinkActive="active" >profile</a></li> -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

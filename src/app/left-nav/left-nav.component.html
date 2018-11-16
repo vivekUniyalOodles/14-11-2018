@@ -1,0 +1,43 @@
+<div class="side-nav-bar">
+  <div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar" [ngClass]="{'active':openSideMenu}">
+      <div class="sidebar-header">
+        <h3>Website name </h3>
+      </div>
+  
+      <ul class="list-unstyled components">
+        <p [ngClass]="currentClasses">Dummy Heading</p>  
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a [routerLink]="['/dashboard']">Dashboard</a>
+        </li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          <a [routerLink]="['/dashboard', 'contact']">Contact</a>
+        </li>
+        <li>
+            <!-- <a href="#">About</a> -->
+    
+            <a class="dropdow-button"  aria-expanded="false" (click)="addDropdow('pageSubmenu')">Pages </a>
+            <div class="drop-down-menu" id="pageSubmenu">
+              <li><a>Page 1</a></li>
+              <li><a>Page 2</a></li>
+              <li><a>Page 3</a></li>
+            </div>
+    
+          </li>
+      </ul>
+      
+  
+    </nav>
+  
+    <!-- Page Content Holder -->
+    <div class="container">
+      <div class="right-panel">
+          <router-outlet></router-outlet>        
+      </div>
+    </div>
+  <!-- {{pageTagName}} -->
+  </div>
+</div>
+
+      

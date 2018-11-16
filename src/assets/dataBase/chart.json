@@ -1,0 +1,7 @@
+{
+  "chart":
+    {
+      "value":[100,300,250,50],
+      "label":["newUsers","totalUsers","activatedUsers","deactivatedUsers"]
+    }
+}

@@ -1,0 +1,50 @@
+<div class="loginMain">
+  <div class="loginBody">
+    <div class="login-form">
+        <form #form="ngForm" (ngSubmit)="registerUser(form)">
+            <h2 class="text-center">Login</h2>   
+            <span class="custom-alert-login" *ngIf="loginErr">
+                    Invalid username or password 
+            </span>            
+            <div class="form-group has-error">
+              <input type="text" class="form-control" name="username" placeholder="Username" required="required"  ngModel #username="ngModel" pattern="[a-zA-Z0-9.#?!@$%^&*-]{3,}$">
+              <span class="custom-alert" *ngIf="username.errors && (username.touched || username.dirty )">
+                <ng-container *ngIf="username.errors.required">
+                    please enter Username
+                </ng-container>
+                <ng-container *ngIf="username.errors.pattern">
+                    Please enter valid Username
+                </ng-container>
+                <ng-container *ngIf="username.errors.pattern">
+                        Please enter valid Username
+                </ng-container>
+              </span>
+              <span class="custom-alert" *ngIf="this.response !=undefined && this.response.error.username">
+                    {{this.response.error.username}}
+              </span>
+            </div>
+            <div class="form-group">
+                <input type="password"  class="form-control" name="password" placeholder="Password" required="required" ngModel #password="ngModel" pattern="^(?=.*?[a-zA-Z])(?=.*?[0-9])(?=.*?[.#?!@$%^&*-]).{5,}$">
+                <span class="custom-alert" *ngIf="password.errors && (password.touched || password.dirty )">
+                    <ng-container *ngIf="password.errors.pattern">
+                        Password Must be a combination of letter, digit, special charactor and least 5 charactor
+                    </ng-container>
+                    <ng-container *ngIf="password.errors.required">
+                        please enter password
+                    </ng-container>
+                </span>   
+                <span class="custom-alert" *ngIf="this.response !=undefined && this.response.error.password">
+                        {{this.response.error.password}}
+                  </span>             
+            </div>        
+            <div class="form-group">
+                <button type="submit" [disabled]="!form.valid" class="btn btn-primary btn-lg btn-block">Sign in</button>
+            </div>
+            <p><a routerLink="/forgot-password">Lost your Password?</a></p>
+        </form>
+        <p class="text-center small">Don't have an account? <a routerLink="/register" routerLinkActive="active" >Sign up here!</a></p>
+    </div>
+  </div>
+  <!-- <pre>{{form.value | json}}</pre>
+  <pre>{{form.valid}}</pre> -->
+</div>

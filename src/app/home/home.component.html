@@ -1,0 +1,54 @@
+<div class="row section">
+  <div class="col-sm-6">
+
+    <canvas baseChart *ngIf="lineChartData && lineChartLabels" [data]="lineChartData" [labels]="lineChartLabels"
+      [options]="lineChartOptions" [chartType]="lineChartType"></canvas>
+  </div>
+  <div class="col-sm-6">
+    <canvas baseChart *ngIf="pieChartData && pieChartLabels" [data]="pieChartData" [labels]="pieChartLabels"
+      [chartType]="pieChartType"></canvas>
+  </div>
+  <!-- <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+      <button (click)="randomizeType()" style="display: inline-block">Toggle</button>
+    </div> -->
+</div>
+<div class="row section user-bar" *ngIf="pieChartLabels">
+  <div class="col-sm-3" *ngFor="let data of pieChartLabels;let i = index">
+    <h1>{{pieChartData[i]}}</h1>
+    <span>{{data}}</span>
+  </div>
+  <!-- <div class="col-sm-3">
+    <h1>123</h1>
+    <span>online</span>
+  </div>
+  <div class="col-sm-3">
+    <h1>123</h1>
+    <span>new</span>
+  </div>
+  <div class="col-sm-3">
+    <h1>123</h1>
+    <span>pending</span>
+  </div> -->
+</div>
+<div class="row section">
+  <div class="col-sm-6">
+    <carousel>
+      <slide>
+        <img appZoomImage src="https://picsum.photos/1080/700" alt="first slide" width=100%; style="display: block;">
+      </slide>
+      <slide>
+        <img appZoomImage src="https://picsum.photos/1080/700" alt="second slide" width=100%; style="display: block;">
+      </slide>
+      <slide>
+        <img appZoomImage src="https://picsum.photos/1080/700" alt="third slide" width=100%; style="display: block;">
+      </slide>
+    </carousel>
+  </div>
+  <div class="col-sm-6">
+
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+    standard dummy text ever since the 1500s,
+
+    <div class="parentDiv"></div>
+  </div>
+</div>

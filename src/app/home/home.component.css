@@ -1,0 +1,46 @@
+.user-bar{
+    text-align: center;
+    margin:75px 0;
+    border-top:1px solid #83C3EE;
+    border-bottom:1px solid #83C3EE;
+}
+
+.user-bar h1{
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    text-shadow: 2px 2px 5px #83C3EE;
+}
+
+.user-bar span{
+    text-transform: capitalize;
+    font-size: 125%;
+}
+
+.user-bar div:first-child{
+    border-left:none;
+}
+
+.user-bar div{
+    border-left:1px solid #83C3EE;
+    margin:20px 0;
+}
+
+@media only screen and (max-width: 900px) {
+    .user-bar span{
+        text-transform: capitalize;
+        font-size: 100%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .user-bar div{
+        border-left:none;
+    }
+}
+
+.mat-snack-bar-container{
+    color:white;
+    text-align: center;
+}
+
